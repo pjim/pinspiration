@@ -4,7 +4,8 @@ angular.module('pinspirationApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ngDialog'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

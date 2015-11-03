@@ -5,7 +5,12 @@ angular.module('pinspirationApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }];
+    },
+    {
+      'title':'User-home',
+      'link':'/User-home'
+    }
+   ];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
