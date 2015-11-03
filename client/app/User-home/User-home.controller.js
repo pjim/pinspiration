@@ -9,8 +9,8 @@ angular.module('pinspirationApp')
 
         });
     }
-    console.log(Auth.getCurrentUser()._id)
-   $scope.addPin = function(){
+   $scope.addPin = function(event){
+     event.preventDefault();
      var pinTit;
      var pinLin;
      var useId = Auth.getCurrentUser()._id;
