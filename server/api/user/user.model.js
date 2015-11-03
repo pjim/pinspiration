@@ -5,6 +5,10 @@ var Schema = mongoose.Schema;
 var crypto = require('crypto');
 var authTypes = ['github', 'twitter', 'facebook', 'google'];
 
+var Pin = new Schema({
+  title:String,
+  link:String
+});
 var UserSchema = new Schema({
   name: String,
   email: { type: String, lowercase: true },
@@ -16,7 +20,8 @@ var UserSchema = new Schema({
   provider: String,
   salt: String,
   twitter: {},
-  github: {}
+  github: {},
+  pins:[Pin]
 });
 
 /**
