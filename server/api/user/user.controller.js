@@ -79,6 +79,22 @@ exports.changePassword = function(req, res, next) {
   });
 };
 
+//adds pins to a users profile
+
+exports.addPin = function(req,res,next){
+  var pinTitle = req.body.pinTitle;
+  var pinLink = req.body.pinLink;
+  var userId = //way to get user id
+  //find the user add the pin to their pin array
+  //
+}
+
+
+exports.deletePin = function(req,res,next){
+  var pinToDelete = req.body.pinToDelete;
+  //find the user and the pin ther deleted it
+  //fi
+}
 /**
  * Get my info
  */
