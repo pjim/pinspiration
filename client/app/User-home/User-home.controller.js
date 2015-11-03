@@ -20,8 +20,8 @@ angular.module('pinspirationApp')
      $http.post('/api/users/addPin', {
 
        id:useId,
-       pinTitle:pin'',
-       pinLink: ''
+       pinTitle:pinTit,
+       pinLink: pinLink ''
      })
    }
   });
