@@ -2,22 +2,26 @@
 
 angular.module('pinspirationApp')
   .controller('UserHomeCtrl', function ($scope,ngDialog,$http,Auth) {
-    $scope.message = 'Hello';
     $scope.upload = function(){
         ngDialog.open({
           template:'components/modal.html',
+           scope: $scope
 
         });
     }
+    $scope.click = function(){
+      alert('clicked');
+    }
    $scope.addPin = function(event){
-     event.preventDefault();
-     var pinTit;
-     var pinLin;
+     console.log('event');
+     var pinTit = $scope.pinName;
+     var pinLin  = $scope.pinLink;
      var useId = Auth.getCurrentUser()._id;
-     $http.put('/api/users/addPin', {
+     $http.post('/api/users/addPin', {
+
        id:useId,
-       pinTitle:,
-       pinLink:
+       pinTitle:pin'',
+       pinLink: ''
      })
    }
   });
