@@ -9,6 +9,10 @@ angular.module('pinspirationApp')
     {
       'title':'User-home',
       'link':'/User-home'
+    },
+    {
+      'title':'See Inspirations',
+      'link':'/Recent-inspirations'
     }
    ];
 
