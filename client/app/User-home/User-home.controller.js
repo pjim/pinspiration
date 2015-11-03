@@ -4,7 +4,10 @@ angular.module('pinspirationApp')
   .controller('UserHomeCtrl', function ($scope,ngDialog) {
     $scope.message = 'Hello';
     $scope.upload = function(){
-        ngDialog.open({template:'popupTmpl.html'});
+        ngDialog.open({
+          template:'components/modal.html',
+
+        });
     }
 
   });
