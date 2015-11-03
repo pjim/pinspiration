@@ -84,7 +84,7 @@ exports.changePassword = function(req, res, next) {
 exports.addPin = function(req,res,next){
   var pinTitle = req.body.pinTitle;
   var pinLink = req.body.pinLink;
-  var userId = //way to get user id
+  var userId = {};//way to get user id
   //find the user add the pin to their pin array
   //
 }
