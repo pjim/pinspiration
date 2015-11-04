@@ -10,8 +10,12 @@ angular.module('pinspirationApp')
     //     });
     // }
         $scope.click = function (){
-            alert('clicked');
+          console.log('sending');
+             $http.get('api/users/' + Auth.getCurrentUser()._id + '/pins').success(function(resp){
+                console.log(resp);
+              });
         };
+
         $scope.addPin = function (event) {
             event.preventDefault();
            console.log('event');
@@ -24,5 +28,9 @@ angular.module('pinspirationApp')
                 pinTitle: pinTit,
                 pinLink: pinLin
             });
-        }
+        };
+
+          $scope.pins = $http.get('/api/users/' + Auth.getCurrentUser()._id).success(function(){
+          //  console.log(user.name);
+        });
   });

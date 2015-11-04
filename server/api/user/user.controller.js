@@ -98,10 +98,20 @@ exports.addPin = function(req,res,next){
       else{console.log('new pin ' + newPin.title + ' saved')}
     })
   });
-  //find the user add the pin to their pin array
-  //push the pin info into the pins array of the user
-  //resave the user
+
 }
+
+//shows a users pins
+exports.showPins = function(req,res,next){
+  var userId = req.params.id;
+
+  User.findById(userId, function (err, user) {
+    if (err) return next(err);
+    if (!user) return res.status(401).send('Unauthorized');
+    res.json(user.pins);
+  });
+}
+
 
 
 exports.deletePin = function(req,res,next){
