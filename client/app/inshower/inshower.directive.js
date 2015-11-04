@@ -5,6 +5,10 @@ angular.module('pinspirationApp')
     return {
       templateUrl: 'app/inshower/inshower.html',
       restrict: 'EA',
+      scope:{
+        inpArr:'='
+
+      },
       link: function (scope, element, attrs) {
       }
     };

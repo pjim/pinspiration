@@ -5,7 +5,8 @@ angular.module('pinspirationApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ngDialog'
+  'ngDialog',
+  'wu.masonry'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
