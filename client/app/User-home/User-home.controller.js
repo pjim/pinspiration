@@ -30,7 +30,7 @@ angular.module('pinspirationApp')
             });
         };
 
-          $scope.pins = $http.get('/api/users/' + Auth.getCurrentUser()._id).success(function(){
-          //  console.log(user.name);
+        $scope.pins = $http.get('/api/users/' + Auth.getCurrentUser()._id + '/pins').success(function(res){
+            $scope.pins = res;
         });
   });
