@@ -16,6 +16,14 @@ angular.module('pinspirationApp')
               });
         };
 
+        function getUserPinsFromServer(){
+          $http.get('/api/users/' + Auth.getCurrentUser()._id + '/pins').success(function(res){
+             $scope.pins = res;
+         });
+        }
+
+        getUserPinsFromServer();
+
         $scope.addPin = function (event) {
             event.preventDefault();
            console.log('event');
@@ -28,9 +36,13 @@ angular.module('pinspirationApp')
                 pinTitle: pinTit,
                 pinLink: pinLin
             });
+            getUserPinsFromServer();
         };
 
-        $scope.pins = $http.get('/api/users/' + Auth.getCurrentUser()._id + '/pins').success(function(res){
-            $scope.pins = res;
-        });
+        // 
+        // $scope.pins = $http.get('/api/users/' + Auth.getCurrentUser()._id + '/pins').success(function(res){
+        //     $scope.pins = res;
+        // });
+
+        //view must update to show new pins when they are sent to server
   });
