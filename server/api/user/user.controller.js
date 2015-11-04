@@ -4,7 +4,7 @@ var User = require('./user.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
-
+var util = require('util');
 var validationError = function(res, err) {
   return res.status(422).json(err);
 };
@@ -115,12 +115,14 @@ exports.showPins = function(req,res,next){
 
 
 exports.deletePin = function(req,res,next){
-  var pinToDelete = req.params.name;
+  //var pinToDelete = req.params.name;
   var pinId = req.params.pid;
   var userId = req.params.id;
   User.findById({_id:userId},function(err,user){
-    if(err)console.log(err);
+    if(err)console.log('this is the findby error ' + err);
+      console.log('the params ' + util.inspect(req.params, false, null));
 
+      console.log('this is the pinId value: ' + pinId + 'the user id' + userId);
       user.pins.id(pinId).remove();
       user.save(function(err){
           res.status(204).send('no content');
