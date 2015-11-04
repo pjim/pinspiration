@@ -23,7 +23,7 @@ angular.module('pinspirationApp')
         getUserPinsFromServer();
 
         $scope.addPin = function (event) {
-            event.preventDefault();
+            //event.preventDefault();
             var pinTit = $scope.pin.pinName;
             var pinLin  = $scope.pin.pinLink;
             var useId = Auth.getCurrentUser()._id;
