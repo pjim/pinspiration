@@ -85,8 +85,22 @@ exports.addPin = function(req,res,next){
   var pinTitle = req.body.pinTitle;
   var pinLink = req.body.pinLink;
   var userId = req.body.id;//way to get user id
+
+  console.log('add pin called with ' + pinTitle + pinLink + 'from user ' + userId);
+  User.findById(userId,function(err,user){
+    var newPin = {
+      title: pinTitle,
+      link: pinLink
+    }
+    user.pins.push(newPin);
+    user.save(function (err){
+      if(err){console.log(err)}
+      else{console.log('new pin ' + newPin.title + ' saved')}
+    })
+  });
   //find the user add the pin to their pin array
-  //
+  //push the pin info into the pins array of the user
+  //resave the user
 }
 
 

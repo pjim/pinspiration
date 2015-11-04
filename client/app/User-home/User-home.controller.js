@@ -15,14 +15,14 @@ angular.module('pinspirationApp')
         $scope.addPin = function (event) {
             event.preventDefault();
            console.log('event');
-            var pinTit = $scope.pinName;
-            var pinLin  = $scope.pinLink;
+            var pinTit = $scope.pin.pinName;
+            var pinLin  = $scope.pin.pinLink;
             var useId = Auth.getCurrentUser()._id;
             $http.post('/api/users/addPin', {
 
                 id: useId,
                 pinTitle: pinTit,
-                pinLink: pinLink
+                pinLink: pinLin
             });
         }
   });
