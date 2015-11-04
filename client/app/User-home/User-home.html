@@ -12,7 +12,16 @@
     <input type="text" ng-model="pin.pinLink">
     <button>Save</button>
   </form>
+
+  <h2>here you can delete pins</h2>
+  <form action="" ng-submit="deletePin($event)">
+    <label for="">Pin Name</label>
+    <input type="text" ng-model="deletepin.name">
+    <button>Delete</button>
+  </form>
+  
 <button ng-click="click()"> test button</button>
+
   <div class='pins'>
      <p ng-repeat="pin in pins"> pin title: {{pin.title}} pin link: {{pin.link}} </p>
 

@@ -14,6 +14,6 @@ router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 router.post('/addPin',controller.addPin);
-router.delete('/deletePin',controller.deletePin);
+router.delete('/:id/deletePin',controller.deletePin);
 router.get('/:id/pins',controller.showPins);
 module.exports = router;

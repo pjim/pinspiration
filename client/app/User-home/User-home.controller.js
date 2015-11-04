@@ -10,10 +10,8 @@ angular.module('pinspirationApp')
     //     });
     // }
         $scope.click = function (){
-          console.log('sending');
-             $http.get('api/users/' + Auth.getCurrentUser()._id + '/pins').success(function(resp){
-                console.log(resp);
-              });
+          console.log('testing');
+            console.log(findPinId('Test Pin'));
         };
 
         function getUserPinsFromServer(){
@@ -26,7 +24,6 @@ angular.module('pinspirationApp')
 
         $scope.addPin = function (event) {
             event.preventDefault();
-           console.log('event');
             var pinTit = $scope.pin.pinName;
             var pinLin  = $scope.pin.pinLink;
             var useId = Auth.getCurrentUser()._id;
@@ -39,10 +36,26 @@ angular.module('pinspirationApp')
             getUserPinsFromServer();
         };
 
-        // 
-        // $scope.pins = $http.get('/api/users/' + Auth.getCurrentUser()._id + '/pins').success(function(res){
-        //     $scope.pins = res;
-        // });
+        function findPinId(name){
+              var result = $scope.pins.filter(function(val){
+                if(val.title === name){return true;}
+                else {return false;}
+              });
 
-        //view must update to show new pins when they are sent to server
+              return result[0]._id;
+        }
+         //console.log(findPinId('Test Pin'));
+
+
+        $scope.deletePin = function(event){
+          event.preventDefault();
+          var pinName = $scope.deletepin.name;
+          var pinId = findPinId(pinName);
+          //var pinId = $scope.pin
+          $http.delete('/api/users' + Auth.getCurrentUser + '/deletePin', {params:{name:pinName}});
+          getUserPinsFromServer();
+
+        };
+
+
   });
