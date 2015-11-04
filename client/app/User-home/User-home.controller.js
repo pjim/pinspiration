@@ -38,13 +38,12 @@ angular.module('pinspirationApp')
 
         function findPinId(name){
               var result = $scope.pins.filter(function(val){
-                if(val.title === name){return true;}
+                if(val.title.toLowerCase() === name.toLowerCase()){return true;}
                 else {return false;}
               });
 
               return result[0]._id;
         }
-         //console.log(findPinId('Test Pin'));
 
 
         $scope.deletePin = function(event){
