@@ -50,9 +50,10 @@ angular.module('pinspirationApp')
         $scope.deletePin = function(event){
           event.preventDefault();
           var pinName = $scope.deletepin.name;
+          console.log(pinName);
           var pinId = findPinId(pinName);
           //var pinId = $scope.pin
-          $http.delete('/api/users' + Auth.getCurrentUser + '/deletePin', {params:{name:pinName}});
+          $http.delete('/api/users/' + Auth.getCurrentUser()._id + '/deletePin', {params:{name:pinName,pid:pinId}});
           getUserPinsFromServer();
 
         };

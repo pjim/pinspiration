@@ -116,7 +116,16 @@ exports.showPins = function(req,res,next){
 
 exports.deletePin = function(req,res,next){
   var pinToDelete = req.params.name;
-  var userId = req.params.id;  
+  var pinId = req.params.pid;
+  var userId = req.params.id;
+  User.findById({_id:userId},function(err,user){
+    if(err)console.log(err);
+
+      user.pins.id(pinId).remove();
+      user.save(function(err){
+          res.status(204).send('no content');
+      });
+  });
   //find the user and the pin ther deleted it
   //fi
 }
