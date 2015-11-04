@@ -53,7 +53,7 @@ angular.module('pinspirationApp')
           console.log(pinName);
           var pinId = findPinId(pinName);
           //var pinId = $scope.pin
-          $http.delete('/api/users/' + Auth.getCurrentUser()._id + '/deletePin', {params:{name:pinName,pid:pinId}});
+          $http.delete('/api/users/' + Auth.getCurrentUser()._id + '/' + pinId + '/deletePin');
           getUserPinsFromServer();
 
         };
