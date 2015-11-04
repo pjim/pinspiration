@@ -17,13 +17,18 @@ User.find({}).remove(function() {
     password: 'test',
     pins:[{
       title:'Test Pin',
-      link:'pinlink'
+      link:'http://lorempixel.com/400/200'
     },
     {
       title:'Another Test Pin',
-      link:'pinlin'
+      link:'http://lorempixel.com/600/200'
 
+    },
+    {
+      title:'test 3',
+      link:'http://lorempixel.com/400/200'
     }
+
    ]
   }, {
     provider: 'local',
