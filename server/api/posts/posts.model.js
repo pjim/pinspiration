@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 
 var PostsSchema = new Schema({
   name: String,
-  src:String
+  src:String, 
   owner:String
 });
 
