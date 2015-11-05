@@ -32,23 +32,13 @@ angular.module('pinspirationApp')
             getUserPinsFromServer();
         };
 
-        function findPinId(name){
-              var result = $scope.pins.filter(function(val){
-                if(val.title.toLowerCase() === name.toLowerCase()){return true;}
-                else {return false;}
-              });
-
-              return result[0]._id;
-        }
-
 
 
         $scope.deletePin = function(event){
           event.preventDefault();
           var pinName = $scope.deletepin.name;
-          var pinId = findPinId(pinName);
           //var pinId = $scope.pin
-          $http.delete('/api/users/' + Auth.getCurrentUser()._id + '/' + pinId + '/deletePin');
+          $http.delete('/api/posts/' + pinName);
           getUserPinsFromServer();
 
         };

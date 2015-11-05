@@ -55,7 +55,7 @@ exports.userPosts = function(req,res){
 
 // Deletes a posts from the DB.
 exports.destroy = function(req, res) {
-  Posts.findById(req.params.id, function (err, posts) {
+  Posts.findOne(req.params.name, function (err, posts) {
     if(err) { return handleError(res, err); }
     if(!posts) { return res.status(404).send('Not Found'); }
     posts.remove(function(err) {
