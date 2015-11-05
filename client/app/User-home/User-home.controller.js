@@ -14,8 +14,10 @@ angular.module('pinspirationApp')
             console.log(findPinId('Test Pin'));
         };
 
+        console.log(Auth.getCurrentUser().name);
         function getUserPinsFromServer(){
-          $http.get('/api/users/' + Auth.getCurrentUser()._id + '/pins').success(function(res){
+          $http.post('/api/posts/usersPosts', {owner:Auth.getCurrentUser().name}).success(function(res){
+            console.log(Auth.getCurrentUser().name);
              $scope.pins = res;
          });
         }

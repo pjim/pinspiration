@@ -2,7 +2,10 @@
 
 <div class="container">
   <h2>See the recent inspirations</h2>
-  <div deckgrid class="deckgrid" source="pins" cardTemplateString="<img src = {{card.src}}>"></div>
-
+<div masonry>
+    <div class="masonry-brick" ng-repeat="pin in pins">
+        <img ng-src="{{ pin.src }}" alt="A masonry brick">
+    </div>
+</div>
   </div>
 </div>

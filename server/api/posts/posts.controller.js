@@ -41,9 +41,12 @@ exports.update = function(req, res) {
     });
   });
 };
+
 //gets all the pins from one user
-exports.userPosts = function(req,res,next){
-  var query = req.params.user
+exports.userPosts = function(req,res){
+  console.log('call to userposts');
+  var query = req.body.owner;
+  console.log(query);
   Posts.find({owner:query},function(err,posts){
     if(err){console.log(err)}
     res.json(posts);
