@@ -26,6 +26,7 @@
 <div masonry>
     <div class="masonry-brick" ng-repeat="pin in pins">
         <img ng-src="{{ pin.src }}" alt="A masonry brick">
+        <h4 class="pin-text">{{pin.name}}</h4>
     </div>
 </div>  <!-- <div class='pins'>
      <p ng-repeat="pin in pins"> pin title: {{pin.title}} pin link: {{pin.link}} </p>
