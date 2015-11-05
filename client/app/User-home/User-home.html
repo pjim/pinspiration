@@ -26,12 +26,6 @@
      <p ng-repeat="pin in pins"> pin title: {{pin.title}} pin link: {{pin.link}} </p>
      <div deckgrid class="deckgrid" source="pins" cardTemplateString="<img src = {{card.link}}>"></div>
 
-  <!-- </div>
-  <div masonry>
-        <div masonry-brick ng-repeat="pin in pins">
-          <img ng-src="{{pin.link}}" alt="brick">
-        </div>
-  </div> -->
   <!-- sadly does not dynamically reload need to refresh by allowing form submit
         also prevents view from changing? over coming the reload error? could force it to call auth/local perhaps-->
 </div>

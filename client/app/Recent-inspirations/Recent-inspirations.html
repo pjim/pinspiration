@@ -1,9 +1,7 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  <div masonry>
-    <div masonry-brick ng-repeat="pin in pins">
-      <img ng-src="{{pin.link}}" alt="brick">
-    </div>
+  <div deckgrid class="deckgrid" source="pins" cardTemplateString="<img src = {{card.link}}>"></div>
+
   </div>
 </div>
