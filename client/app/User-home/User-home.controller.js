@@ -9,15 +9,9 @@ angular.module('pinspirationApp')
     //
     //     });
     // }
-        $scope.click = function (){
-          console.log('testing');
-            console.log(findPinId('Test Pin'));
-        };
 
-        console.log(Auth.getCurrentUser().name);
         function getUserPinsFromServer(){
-          $http.post('/api/posts/usersPosts', {owner:Auth.getCurrentUser().name}).success(function(res){
-            console.log(Auth.getCurrentUser().name);
+          $http.get('/api/posts/allPosts/' + Auth.getCurrentUser().name).success(function(res){
              $scope.pins = res;
          });
         }
@@ -48,10 +42,10 @@ angular.module('pinspirationApp')
         }
 
 
+
         $scope.deletePin = function(event){
           event.preventDefault();
           var pinName = $scope.deletepin.name;
-          console.log(pinName);
           var pinId = findPinId(pinName);
           //var pinId = $scope.pin
           $http.delete('/api/users/' + Auth.getCurrentUser()._id + '/' + pinId + '/deletePin');
