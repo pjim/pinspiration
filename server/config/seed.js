@@ -16,11 +16,11 @@ User.find({}).remove(function() {
     email: 'test@test.com',
     password: 'test',
     pins:[{
-      title:'Test Pin',
+      title:'My inspiration',
       link:'http://lorempixel.com/400/200'
     },
     {
-      title:'Another Test Pin',
+      title:'my pretty picture',
       link:'http://lorempixel.com/600/200'
 
     },

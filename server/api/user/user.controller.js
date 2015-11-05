@@ -111,11 +111,16 @@ exports.showPins = function(req,res,next){
     res.json(user.pins);
   });
 }
-
+//returs every pin
+exports.showAllPins = function(req,res,next){
+  User.find({},'pins',function(err, pinret){
+    if(err)return next(err);
+    res.json(pinret);
+  });
+}
 
 
 exports.deletePin = function(req,res,next){
-  //var pinToDelete = req.params.name;
   var pinId = req.params.pid;
   var userId = req.params.id;
   User.findById({_id:userId},function(err,user){
@@ -128,8 +133,7 @@ exports.deletePin = function(req,res,next){
           res.status(204).send('no content');
       });
   });
-  //find the user and the pin ther deleted it
-  //fi
+
 }
 /**
  * Get my info
