@@ -1,26 +1,33 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="container">
   <h1>A space for your inspirations</h1>
-  <div class="new-in alt-text">
-  <h3>New inspirations go here</h3>
-  <Button class="btn" ng-click="upload()">Link a new inspiration</Button>
+
+  <div class=" form-box alt-text">
+      <div class="row alt-text">
+
+           <h3 class="">Add the images that inspire you </h3>
+
+           <Button class="btn" ng-click="upload()">Link a new inspiration</Button>
+      </div>
 
   <form action="" ng-submit="addPin($event)">
     <label for="">Name</label>
     <input type="text" ng-model="pin.pinName" >
     <label for="">Link</label>
     <input type="text" ng-model="pin.pinLink">
-    <button>Save</button>
+    <button class="btn">Save</button>
   </form>
-
-  <h2 class="alt-text">here you can delete pins</h2>
+</div>
+<div class="spacer form-box">
+  <h2 class="alt-text">Delete unwanted images:</h2>
   <form action="" ng-submit="deletePin($event)">
     <label for="">Pin Name</label>
     <input type="text" ng-model="deletepin.name">
-    <button>Delete</button>
+    <button class="btn">Delete</button>
   </form>
 
-
+</div>
+<h2>All your images</h2>
   ...
 </div>
 <div masonry>
