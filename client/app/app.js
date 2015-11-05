@@ -6,7 +6,7 @@ angular.module('pinspirationApp', [
   'ngSanitize',
   'ngRoute',
   'ngDialog',
-  'akoenig.deckgrid'
+  'wu.masonry',
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
