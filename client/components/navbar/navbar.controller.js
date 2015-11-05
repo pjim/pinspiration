@@ -7,12 +7,14 @@ angular.module('pinspirationApp')
       'link': '/'
     },
     {
-      'title':'User-home',
-      'link':'/User-home'
+      'title':'My Image Home',
+      'link':'/User-home',
+      'show':'isLoggedIn()'
     },
     {
-      'title':'See Inspirations',
-      'link':'/Recent-inspirations'
+      'title':'Recent Inspirations',
+      'link':'/Recent-inspirations',
+      'show':'true'
     }
    ];
 
